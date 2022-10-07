@@ -1,0 +1,14 @@
+{
+  "name": "sl-server",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "koa": "^2.13.4"
+  }
+}
