@@ -1,21 +1,12 @@
 import koa from "koa";
-import { readdir } from "fs-extra"
+import fsextra不是ESmodule我是真的会谢我觉得不应该呀 from "fs-extra"
 import { resolve, join } from "path"
-import { url } from './utils.js';
+import { url, QRs } from './utils.js';
+const { readdir } = fsextra不是ESmodule我是真的会谢我觉得不应该呀;
 
 const app = new koa();
 const __dirname = resolve();
 const port = 80;//发布端口，上线时记得配80和443
-
-(async () => {
-
-    await server();
-})();
-
-const loadPublic = async () => {
-    const _public = readdir(join(__dirname, "public"));
-    
-}
 
 const server = async () => {
 
@@ -52,10 +43,12 @@ const server = async () => {
 
     // listen 80 and 443
 
-    app.listen(port, () => {
-        console.log("start on http://" + url + ":" + port + "/");
-    });
-    app.listen(443, () => {
-        console.log("start on https://" + url + ":" + port + "/");
+    app.listen(port, async () => {
+        console.log("start on http://" + url + "/");
+        console.log(await QRs("http://" + url + "/"));
     });
 }
+
+(async () => {
+    await server();
+})();

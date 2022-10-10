@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "fs-extra": "^10.1.0",
-    "koa": "^2.13.4"
+    "koa": "^2.13.4",
+    "qrcode-terminal": "^0.12.0"
   }
 }
